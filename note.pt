@@ -1,0 +1,12 @@
+def add_weather(day, condition):
+    try:
+        if not isinstance(condition, str):
+            raise TypeError("Weather condition must be a string")
+        weather[day].append(condition)
+        print(f"Weather condition '{condition}' added for {day}")
+    except KeyError:
+        print(f"Error: '{day}' is not a valid day of the week")
+    except AttributeError:
+        print(f"Error: The weather data structure is not properly initialized")
+    except TypeError as e:
+        print(f"Error: {str(e)}")
